@@ -20,7 +20,7 @@ function Typing() {
     }, []);
   
     return (
-      <h1 className='text-center text-3xl'>
+      <h1 className='text-center text-green-300 text-4xl typing-text'>
         <span ref={el} />
       </h1>
     );

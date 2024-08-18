@@ -26,22 +26,22 @@ function Footer() {
               </h3>
               <ul>
                 <li className="mb-4">
-                  <a className=" text-base font-medium text-gray-900 hover:text-gray-700" href="#">
+                  <a className=" text-base font-medium text-gray-200 hover:text-gray-700" href="#">
                     Lorem
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a className=" text-base font-medium text-gray-900 hover:text-gray-700" href="#">
+                  <a className=" text-base font-medium text-gray-200 hover:text-gray-700" href="#">
                     Lorem
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a className=" text-base font-medium text-gray-900 hover:text-gray-700" href="#">
+                  <a className=" text-base font-medium text-gray-200 hover:text-gray-700" href="#">
                     Lorem
                   </a>
                 </li>
                 <li>
-                  <a className=" text-base font-medium text-gray-900 hover:text-gray-700" href="#">
+                  <a className=" text-base font-medium text-gray-200 hover:text-gray-700" href="#">
                     Lorem
                   </a>
                 </li>
@@ -55,22 +55,22 @@ function Footer() {
               </h3>
               <ul>
                 <li className="mb-4">
-                  <a className=" text-base font-medium text-gray-900 hover:text-gray-700" href="#">
+                  <a className=" text-base font-medium text-gray-200 hover:text-gray-700" href="#">
                     Lorem
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a className=" text-base font-medium text-gray-900 hover:text-gray-700" href="#">
+                  <a className=" text-base font-medium text-gray-200 hover:text-gray-700" href="#">
                   Lorem
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a className=" text-base font-medium text-gray-900 hover:text-gray-700" href="#">
+                  <a className=" text-base font-medium text-gray-200 hover:text-gray-700" href="#">
                     Lorem
                   </a>
                 </li>
                 <li>
-                  <a className=" text-base font-medium text-gray-900 hover:text-gray-700" href="#">
+                  <a className=" text-base font-medium text-gray-200 hover:text-gray-700" href="#">
                   Lorem
                   </a>
                 </li>
@@ -84,17 +84,17 @@ function Footer() {
               </h3>
               <ul>
                 <li className="mb-4">
-                  <a className=" text-base font-medium text-gray-900 hover:text-gray-700" href="#">
+                  <a className=" text-base font-medium text-gray-200 hover:text-gray-700" href="#">
                     Lorem &amp; Lorem
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a className=" text-base font-medium text-gray-900 hover:text-gray-700" href="#">
+                  <a className=" text-base font-medium text-gray-200 hover:text-gray-700" href="#">
                     Lorem
                   </a>
                 </li>
                 <li>
-                  <a className=" text-base font-medium text-gray-900 hover:text-gray-700" href="#">
+                  <a className=" text-base font-medium text-gray-200 hover:text-gray-700" href="#">
                   Lorem
                   </a>
                 </li>
