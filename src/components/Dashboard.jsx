@@ -9,7 +9,7 @@ import EventsDashBoard from './EventsDashBoard'
 function Dashboard() {
     return (
         <div className='flex'>
-            <aside className="flex min-h-screen w-64 flex-col overflow-y-auto border-r bg-black px-5 py-8">
+            <aside className="flex min-h-screen min-w-[170px] w-64 flex-col overflow-y-auto border-r bg-black px-5 py-8">
                 <Link to={'/'}>
                     <img src={initStar} className='h-[56px] w-[56px]' />
                 </Link>
@@ -52,7 +52,7 @@ function Dashboard() {
                 </div>
             </aside>
             <Routes >
-                <Route path='/' exact element={'Dashboard'} />
+                <Route path='/' exact element={<h1>Google analytics iframe here</h1>} />
                 <Route path='/execom' exact element={<ExecomDashboard />} />
                 <Route path='/events' exact element={<EventsDashBoard />} />
 

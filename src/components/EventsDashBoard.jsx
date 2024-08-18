@@ -2,7 +2,7 @@ import React from 'react'
 
 function EventsDashBoard() {
   return (
-    <div>EventsDashBoard</div>
+    <div className='w-[80%]'>EventsDashBoard</div>
   )
 }
 
