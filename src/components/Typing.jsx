@@ -8,7 +8,7 @@ function Typing() {
 
     React.useEffect(() => {
       const typed = new Typed(el.current, {
-        strings: ['Init[] Association', 'Test text'],
+        strings: ['Init[] Association', 'An Information Technology Association'],
         typeSpeed: 50,
         fadeOut: true,
         loop: true

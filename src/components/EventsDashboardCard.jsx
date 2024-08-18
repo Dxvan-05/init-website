@@ -1,8 +1,10 @@
 import React from 'react'
 
-function EventCard({title, description, imageUrl}) {
-    return (
-        <div className="w-[300px] rounded-md border border-gray-50">
+function EventsDashboardCard({imageUrl, description, title }) {
+
+    
+  return (
+    <div className="w-[300px] rounded-md border border-gray-50">
             <img
                 src={imageUrl}
                 alt="Laptop"
@@ -15,13 +17,13 @@ function EventCard({title, description, imageUrl}) {
                 </p>
                 <button
                     type="button"
-                    className="mt-4 text-sm rounded-sm bg-black px-4 py-2 text-[10px] font-bold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                    className="mt-4 text-sm rounded-sm bg-red-700 px-3 py-1 text-[10px] font-bold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
                 >
-                    Register
+                    Delete
                 </button>
             </div>
         </div>
-    )
+  )
 }
 
-export default EventCard
+export default EventsDashboardCard
