@@ -9,7 +9,7 @@ import EventsDashBoard from './EventsDashBoard'
 function Dashboard() {
     return (
         <div className='flex'>
-            <aside className="flex h-screen w-64 flex-col overflow-y-auto border-r bg-black px-5 py-8">
+            <aside className="flex min-h-screen w-64 flex-col overflow-y-auto border-r bg-black px-5 py-8">
                 <Link to={'/'}>
                     <img src={initStar} className='h-[56px] w-[56px]' />
                 </Link>
