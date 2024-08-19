@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Plus } from "lucide-react";
 import EventsDashboardCard from "./EventsDashboardCard";
 
@@ -42,6 +42,27 @@ function EventsDashBoard() {
         },
     ];
 
+    const [title, setTitle] =  useState('');
+    const [description, setDescription] = useState('');
+    const [imageUrl, setImageUrl] = useState('');
+    const [registerLink, setRegisterLink] = useState('');
+
+    const handleTitleInput = (e) => {
+        setTitle(e.target.value);
+    }
+
+    const handleDescriptionInput = (e) => {
+        setDescription(e.target.value);
+    }
+
+    const handleImageUrlInput = (e) => {
+        setImageUrl(e.target.value);
+    }
+
+    const handleRegisterLinkChange = () => {
+        setRegisterLink(e.target.value);
+    }
+
     return (
         <div className="w-[80%]">
             <h1 className="text-center font-bold text-3xl mt-20">
@@ -65,6 +86,7 @@ function EventsDashBoard() {
                                         type="text"
                                         placeholder="Title"
                                         id="title"
+                                        value={title}
                                     ></input>
                                 </div>
                             </div>
@@ -85,6 +107,7 @@ function EventsDashBoard() {
                                         type="description"
                                         placeholder="Description"
                                         id="description"
+                                        value={description}
                                     ></input>
                                 </div>
                             </div>
@@ -104,6 +127,7 @@ function EventsDashBoard() {
                                         type="text"
                                         placeholder="Image URL"
                                         id="image"
+                                        value={imageUrl}
                                     ></input>
                                 </div>
                             </div>
@@ -123,6 +147,7 @@ function EventsDashBoard() {
                                         type="text"
                                         placeholder="Registration Link"
                                         id="registration"
+                                        value={registerLink}
                                     ></input>
                                 </div>
                             </div>
