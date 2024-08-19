@@ -1,6 +1,6 @@
 import React from 'react'
 
-function EventCard({title, description, imageUrl}) {
+function EventCard({title, description, imageUrl, registerLink}) {
     return (
         <div className="w-[300px] rounded-md border border-gray-50">
             <img
@@ -13,12 +13,14 @@ function EventCard({title, description, imageUrl}) {
                 <p className="mt-3 text-sm text-gray-200">
                     {description}
                 </p>
-                <button
-                    type="button"
-                    className="mt-4 text-sm rounded-sm bg-black px-4 py-2 text-[10px] font-bold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-                >
-                    Register
-                </button>
+                <a href={registerLink}>
+                    <button
+                        type="button"
+                        className="mt-4 text-sm rounded-sm bg-black px-4 py-2 text-[10px] font-bold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                    >
+                        Register
+                    </button>
+                </a>
             </div>
         </div>
     )

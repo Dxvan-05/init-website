@@ -5,8 +5,8 @@ function ExecomCard({ membersList }) {
     membersList.map((member, i) => (
         <div key={i} className="mx-auto w-[300px] rounded-md border bg-black">
           <img
-            src="https://i.pngimg.me/thumb/f/720/m2i8m2A0K9H7N4m2.jpg"
-            alt="Laptop"
+            src={member.imageUrl}
+            alt="Execom Member Image"
             className="h-[200px] w-full rounded-t-md object-cover"
           />
           <div className="p-4">
@@ -17,7 +17,7 @@ function ExecomCard({ membersList }) {
             </p>
             <div className="mt-4 flex flex-wrap">
               <div className="w-auto p-1.5">
-                <a href="#">
+                <a href={member.linkedInUrl}>
                   <div className="flex h-8 w-8 items-center justify-center rounded-full border border-gray-300 hover:border-gray-400">
                     <svg
                       width="16"
@@ -36,7 +36,7 @@ function ExecomCard({ membersList }) {
               </div>
               
               <div className="w-auto p-1.5">
-                <a href="#">
+                <a href={member.InstagramUrl}>
                   <div className="flex h-8 w-8 items-center justify-center rounded-full border border-gray-300 hover:border-gray-400">
                     <svg
                       width="16"

@@ -1,45 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import EventCard from "./EventCard";
+import { useEffect } from "react";
+import axios from "axios";
 
 function Events() {
-    const events = [
-        {
-            title: "Workshop 1",
-            description: "Description 1",
-            imageUrl:
-                "https://media.licdn.com/dms/image/D4E22AQFMO878H6eYFA/feedshare-shrink_800/0/1708527470540?e=1726099200&v=beta&t=NaNGozkXgvt1NnQDz6SwZZelzc00bYTu8O9SzpxgZBs",
-        },
-        {
-            title: "Workshop 2",
-            description: "Description 2",
-            imageUrl:
-                "https://media.licdn.com/dms/image/D4E22AQFMO878H6eYFA/feedshare-shrink_800/0/1708527470540?e=1726099200&v=beta&t=NaNGozkXgvt1NnQDz6SwZZelzc00bYTu8O9SzpxgZBs",
-        },
-        {
-            title: "Workshop 3",
-            description: "Description 3",
-            imageUrl:
-                "https://media.licdn.com/dms/image/D4E22AQFMO878H6eYFA/feedshare-shrink_800/0/1708527470540?e=1726099200&v=beta&t=NaNGozkXgvt1NnQDz6SwZZelzc00bYTu8O9SzpxgZBs",
-        },
-        {
-            title: "Workshop 4",
-            description: "Description 4",
-            imageUrl:
-                "https://media.licdn.com/dms/image/D4E22AQFMO878H6eYFA/feedshare-shrink_800/0/1708527470540?e=1726099200&v=beta&t=NaNGozkXgvt1NnQDz6SwZZelzc00bYTu8O9SzpxgZBs",
-        },
-        {
-            title: "Workshop 5",
-            description: "Description 5",
-            imageUrl:
-                "https://media.licdn.com/dms/image/D4E22AQFMO878H6eYFA/feedshare-shrink_800/0/1708527470540?e=1726099200&v=beta&t=NaNGozkXgvt1NnQDz6SwZZelzc00bYTu8O9SzpxgZBs",
-        },
-        {
-            title: "Workshop 6",
-            description: "Description 6",
-            imageUrl:
-                "https://media.licdn.com/dms/image/D4E22AQFMO878H6eYFA/feedshare-shrink_800/0/1708527470540?e=1726099200&v=beta&t=NaNGozkXgvt1NnQDz6SwZZelzc00bYTu8O9SzpxgZBs",
-        },
-    ];
+    const [events, setEvents] = useState([]); 
+
+    useEffect(() => {
+        axios.get("/event/data").then((response) => {
+            setEvents(response.data.data);
+        });
+    }, []);
 
     return (
         <>
@@ -53,6 +24,7 @@ function Events() {
                             imageUrl={event.imageUrl}
                             title={event.title}
                             description={event.description}
+                            registerLink={event.registerLink}
                         />
                     );
                 })}

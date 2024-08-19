@@ -1,66 +1,71 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Plus } from "lucide-react";
 import EventsDashboardCard from "./EventsDashboardCard";
+import axios from "axios";
 
 function EventsDashBoard() {
-    const events = [
-        {
-            title: "Workshop 1",
-            description: "Description 1",
-            imageUrl:
-                "https://media.licdn.com/dms/image/D4E22AQFMO878H6eYFA/feedshare-shrink_800/0/1708527470540?e=1726099200&v=beta&t=NaNGozkXgvt1NnQDz6SwZZelzc00bYTu8O9SzpxgZBs",
-        },
-        {
-            title: "Workshop 2",
-            description: "Description 2",
-            imageUrl:
-                "https://media.licdn.com/dms/image/D4E22AQFMO878H6eYFA/feedshare-shrink_800/0/1708527470540?e=1726099200&v=beta&t=NaNGozkXgvt1NnQDz6SwZZelzc00bYTu8O9SzpxgZBs",
-        },
-        {
-            title: "Workshop 3",
-            description: "Description 3",
-            imageUrl:
-                "https://media.licdn.com/dms/image/D4E22AQFMO878H6eYFA/feedshare-shrink_800/0/1708527470540?e=1726099200&v=beta&t=NaNGozkXgvt1NnQDz6SwZZelzc00bYTu8O9SzpxgZBs",
-        },
-        {
-            title: "Workshop 4",
-            description: "Description 4",
-            imageUrl:
-                "https://media.licdn.com/dms/image/D4E22AQFMO878H6eYFA/feedshare-shrink_800/0/1708527470540?e=1726099200&v=beta&t=NaNGozkXgvt1NnQDz6SwZZelzc00bYTu8O9SzpxgZBs",
-        },
-        {
-            title: "Workshop 5",
-            description: "Description 5",
-            imageUrl:
-                "https://media.licdn.com/dms/image/D4E22AQFMO878H6eYFA/feedshare-shrink_800/0/1708527470540?e=1726099200&v=beta&t=NaNGozkXgvt1NnQDz6SwZZelzc00bYTu8O9SzpxgZBs",
-        },
-        {
-            title: "Workshop 6",
-            description: "Description 6",
-            imageUrl:
-                "https://media.licdn.com/dms/image/D4E22AQFMO878H6eYFA/feedshare-shrink_800/0/1708527470540?e=1726099200&v=beta&t=NaNGozkXgvt1NnQDz6SwZZelzc00bYTu8O9SzpxgZBs",
-        },
-    ];
+    const [events, setEvents] = useState([]); 
 
-    const [title, setTitle] =  useState('');
-    const [description, setDescription] = useState('');
-    const [imageUrl, setImageUrl] = useState('');
-    const [registerLink, setRegisterLink] = useState('');
+    
+    const [title, setTitle] = useState("");
+    const [description, setDescription] = useState("");
+    const [imageUrl, setImageUrl] = useState("");
+    const [registerLink, setRegisterLink] = useState("");
+
+    const [refresh, setRefresh] = useState(true);
+
+    const toggleRefresh = () => {
+        setRefresh(!refresh);
+    };
+
+    useEffect(() => {
+        axios.get("/event/data").then((response) => {
+            setEvents(response.data.data);
+        });
+    }, [refresh]);
+
+    
 
     const handleTitleInput = (e) => {
         setTitle(e.target.value);
-    }
+    };
 
     const handleDescriptionInput = (e) => {
         setDescription(e.target.value);
-    }
+    };
 
     const handleImageUrlInput = (e) => {
         setImageUrl(e.target.value);
-    }
+    };
 
-    const handleRegisterLinkChange = () => {
+    const handleRegisterLinkChange = (e) => {
         setRegisterLink(e.target.value);
+    };
+
+    const addNewEvent = () => {
+        if( !(title && description && imageUrl && registerLink)) {
+            alert('A field in empty. Can\'t add Event');
+            return;
+          }
+
+        axios.post('/event/create', {
+            title,
+            description,
+            imageUrl,
+            registerLink,
+        }).then((response) => {
+            if(!response.data.status) {
+                alert(response.data.msg);
+              }
+              else {
+                alert('Event Successfully Added');
+                toggleRefresh();
+                setTitle('');
+                setDescription('');
+                setImageUrl('');
+                setRegisterLink('');
+              }
+        });
     }
 
     return (
@@ -87,10 +92,11 @@ function EventsDashBoard() {
                                         placeholder="Title"
                                         id="title"
                                         value={title}
+                                        onChange={handleTitleInput}
                                     ></input>
                                 </div>
                             </div>
-                            
+
                             <div>
                                 <div className="flex items-center justify-between">
                                     <label
@@ -108,6 +114,7 @@ function EventsDashBoard() {
                                         placeholder="Description"
                                         id="description"
                                         value={description}
+                                        onChange={handleDescriptionInput}
                                     ></input>
                                 </div>
                             </div>
@@ -128,6 +135,7 @@ function EventsDashBoard() {
                                         placeholder="Image URL"
                                         id="image"
                                         value={imageUrl}
+                                        onChange={handleImageUrlInput}
                                     ></input>
                                 </div>
                             </div>
@@ -148,6 +156,7 @@ function EventsDashBoard() {
                                         placeholder="Registration Link"
                                         id="registration"
                                         value={registerLink}
+                                        onChange={handleRegisterLinkChange}
                                     ></input>
                                 </div>
                             </div>
@@ -156,6 +165,7 @@ function EventsDashBoard() {
                                 <button
                                     type="button"
                                     className="inline-flex w-full items-center justify-center rounded-md bg-gray-600 px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-gray-500"
+                                    onClick={addNewEvent}
                                 >
                                     Add Event{" "}
                                     <Plus className="ml-2" size={16} />
@@ -179,6 +189,8 @@ function EventsDashBoard() {
                             imageUrl={event.imageUrl}
                             title={event.title}
                             description={event.description}
+                            id={event._id}
+                            toggleRefresh={toggleRefresh}
                         />
                     );
                 })}
