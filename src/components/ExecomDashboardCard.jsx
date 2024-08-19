@@ -1,12 +1,25 @@
+import axios from 'axios';
 import React from 'react'
 
-function ExecomDashBoardCard({ membersList }) {
+function ExecomDashBoardCard({ membersList, toggleRefresh }) {
+
+
+  const handleDelete = (e) => {
+    axios.post('/execom/delete', {
+      _id: e.target.value
+    }).then((response) => {
+      console.log(response);
+      toggleRefresh();
+    })
+  }
+
+
   return (
     membersList.map((member, i) => (
         <div key={i} className="mx-auto w-[300px] rounded-md border bg-black">
           <img
-            src="https://i.pngimg.me/thumb/f/720/m2i8m2A0K9H7N4m2.jpg"
-            alt="Laptop"
+            src={member.imageUrl}
+            alt="Execom Member Image"
             className="h-[200px] w-full rounded-t-md object-cover"
           />
           <div className="p-4">
@@ -17,7 +30,7 @@ function ExecomDashBoardCard({ membersList }) {
             </p>
             <div className="mt-4 flex flex-wrap">
               <div className="w-auto p-1.5">
-                <a href="#">
+                <a href={member.linkedInUrl}>
                   <div className="flex h-8 w-8 items-center justify-center rounded-full border border-gray-300 hover:border-gray-400">
                     <svg
                       width="16"
@@ -36,7 +49,7 @@ function ExecomDashBoardCard({ membersList }) {
               </div>
               
               <div className="w-auto p-1.5">
-                <a href="#">
+                <a href={member.InstagramUrl}>
                   <div className="flex h-8 w-8 items-center justify-center rounded-full border border-gray-300 hover:border-gray-400">
                     <svg
                       width="16"
@@ -55,7 +68,7 @@ function ExecomDashBoardCard({ membersList }) {
               </div>
             </div>
           </div>
-          <button className='bg-red-700 text-white rounded m-5 p-2 hover:bg-red-800'>Remove</button>
+          <button className='bg-red-700 text-white rounded m-5 p-2 hover:bg-red-800' value={member._id} onClick={handleDelete}>Remove</button>
         </div>
       ))
   )
