@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Plus } from "lucide-react";
 import EventsDashboardCard from "./EventsDashboardCard";
 import axios from "axios";
+import EventCard from "./EventCard";
 
 function EventsDashBoard() {
     const [events, setEvents] = useState([]); 
@@ -179,7 +180,7 @@ function EventsDashBoard() {
             <hr />
 
             <h1 className=" ps-10 font-bold text-center text-4xl mt-20">
-                Remove Existing Events
+                Remove/Update Existing Events
             </h1>
 
             <div className="flex flex-wrap lg:mx-60 sm:mx-20 justify-center gap-10 mt-20 mb-20">
@@ -191,10 +192,31 @@ function EventsDashBoard() {
                             description={event.description}
                             id={event._id}
                             toggleRefresh={toggleRefresh}
+                            registerLink={event.registerLink}
                         />
                     );
                 })}
             </div>
+
+            <hr />
+
+            <h1 className=" ps-10 font-bold text-center text-4xl mt-20">
+                Preview
+            </h1>
+
+            <div className="flex mb-10 flex-wrap lg:mx-60 sm:mx-20 justify-center gap-10 mt-20">
+                {events.map((event) => {
+                    return (
+                        <EventCard
+                            imageUrl={event.imageUrl}
+                            title={event.title}
+                            description={event.description}
+                            registerLink={event.registerLink}
+                        />
+                    );
+                })}
+            </div>
+
         </div>
     );
 }

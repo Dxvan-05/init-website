@@ -1,8 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import axios from 'axios';
 
-function EventsDashboardCard({imageUrl, description, title, id, toggleRefresh }) {
+function EventsDashboardCard({imageUrl, description, title, id, toggleRefresh, registerLink }) {
 
+    const [imageInput, setImageInput] = useState(imageUrl);
+    const [titleInput, setTitleInput] = useState(title);
+    const [descriptionInput, setDescriptionInput] = useState(description);
+    const [registerLinkInput, setRegisterLinkInput] = useState(registerLink);
+
+    const handleImageInput = (e) => {
+      setImageInput(e.target.value);
+    }
+
+    const handleTitleInput = (e) => {
+      setTitleInput(e.target.value);
+    }
+
+    const handleDescriptionInput = (e) => {
+      setDescriptionInput(e.target.value);
+    }
+
+    const handleRegisterLinkInput = (e) => {
+      setRegisterLinkInput(e.target.value);
+    }
     
     const handleDelete = (e) => {
         axios.post('/event/delete', {
@@ -25,10 +45,15 @@ function EventsDashboardCard({imageUrl, description, title, id, toggleRefresh })
                 className="h-[200px] w-full rounded-md object-cover"
             />
             <div className="p-4 bg-gray-900 text-white">
-                <h1 className="text-lg font-semibold">{title}</h1>
+            <input className='bg-black border mb-2 p-2' value={imageInput} onChange={handleImageInput} />
+                <h1 className="text-lg font-semibold">
+                  <input className='bg-black border p-2' value={titleInput} onChange={handleTitleInput} />
+                </h1>
                 <p className="mt-3 text-sm text-gray-200">
-                    {description}
+                  <input className='bg-black border p-2' value={descriptionInput} onChange={handleDescriptionInput} />
                 </p>
+                <input className='bg-black border mt-2 mb-2 p-2' value={registerLinkInput} onChange={handleRegisterLinkInput} />
+                
                 <button
                     type="button"
                     className="mt-4 text-sm rounded-sm bg-red-700 px-3 py-1 text-[10px] font-bold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
@@ -36,6 +61,13 @@ function EventsDashboardCard({imageUrl, description, title, id, toggleRefresh })
                     onClick={handleDelete}
                 >
                     Delete
+                </button>
+                <button
+                    type="button"
+                    className="mt-4 ms-2 text-sm rounded-sm bg-yellow-800 px-3 py-1 text-[10px] font-bold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                    value={id}
+                >
+                    Update
                 </button>
             </div>
         </div>
