@@ -7,6 +7,11 @@
     src: url("/SDGlitch_Demo.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: "teko";
+    src: url("/Teko-SemiBold.ttf") format("truetype");
+}
+
 .typing-text {
     font-family: "glitch";
 }
@@ -32,4 +37,8 @@
     -webkit-backdrop-filter: blur(4px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+#about-title {
+    font-family: "teko";
 }
