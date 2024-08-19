@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { ArrowRight } from 'lucide-react'
 import initStar from '../assets/init-star.png'
+import axios from 'axios';
 
 function LoginPage({ loginToggle } ) {
 
@@ -17,7 +18,17 @@ function LoginPage({ loginToggle } ) {
     }
 
     const handleLogin = () => {
-        loginToggle();
+        axios.post('/admin/login', {
+            username,
+            password,
+        }).then((response) => {
+            if(!response.data.status) {
+                alert('Wrong Username or Password. Try Again');
+            }
+            else {
+                loginToggle();
+            }
+        });
     }
 
     return (
