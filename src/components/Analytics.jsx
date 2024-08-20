@@ -4,15 +4,27 @@ import React, { useEffect, useState } from "react";
 function Analytics() {
 
     const [para, setPara] = useState('');
+    const [id, setId] = useState('');
 
     useEffect(() => {
         axios.get('/content/data').then((response) => {
+            console.log(response.data);
             setPara(response.data.data[0].para);
+            setId(response.data.data[0]._id);
         });
     }, [])
 
     const handleParaInput = (e) => {
         setPara(e.target.value);
+    }
+
+    const handleUpdate = (e) => {
+        axios.put('/update/content', {
+            _id: e.target.value,
+            para,
+        }).then((response) => {
+            alert(response.data.msg);
+        });
     }
 
     return (
@@ -23,7 +35,7 @@ function Analytics() {
             <div className="ms-20 me-10 max-w-[900px] ">
                 <textarea value={para} onChange={handleParaInput} className="bg-black border mt-10 h-full w-full text-2xl min-h-[500px]"></textarea>
                 <div className="mt-10 flex justify-end">
-                    <button className="bg-green-500 px-3 py-2">Save</button>
+                    <button className="bg-green-500 px-3 py-2" value={id} onClick={handleUpdate}>Save</button>
                 </div>
             </div>
         </div>

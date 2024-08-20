@@ -34,6 +34,37 @@ function ExecomDashBoardCard({ member, toggleRefresh }) {
     setInstagramUrl(e.target.value);
   }
 
+  const handleUpdate = (e) => {
+
+    if (
+      !(
+          name &&
+          position &&
+          description &&
+          linkedInUrl &&
+          instagramUrl &&
+          imageUrl
+      )
+  ) {
+    alert('A field is empty. Can\'t Update');
+    return;
+  }
+
+
+    axios.put('/update/execom', {
+      _id: e.target.value,
+      name,
+      position,
+      description,
+      imageUrl,
+      linkedInUrl,
+      InstagramUrl: instagramUrl,
+    }).then((response) => {
+      alert(response.data.msg);
+      toggleRefresh();
+    });
+  }
+
   const handleDelete = (e) => {
     axios.post('/execom/delete', {
       _id: e.target.value
@@ -67,7 +98,7 @@ function ExecomDashBoardCard({ member, toggleRefresh }) {
             
           </div>
           <button className='bg-red-700 text-white rounded m-5 p-2 hover:bg-red-800' value={member._id} onClick={handleDelete}>Remove</button>
-          <button className='bg-yellow-800 text-white rounded ms-2 p-2 hover:bg-orange-800' value={member._id}>Update</button>
+          <button className='bg-yellow-800 text-white rounded ms-2 p-2 hover:bg-orange-800' value={member._id} onClick={handleUpdate}>Update</button>
         </div>
     
   )
