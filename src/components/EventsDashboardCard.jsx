@@ -33,6 +33,25 @@ function EventsDashboardCard({imageUrl, description, title, id, toggleRefresh, r
         })
       }
 
+    const handleUpdate = (e) => {
+
+      if( !(titleInput && descriptionInput && imageInput && registerLinkInput)) {
+        alert('A field in empty. Can\'t Update');
+        return;
+      }
+
+      axios.put('/update/event', {
+        _id: e.target.value,
+        title: titleInput,
+        description: descriptionInput,
+        imageUrl: imageInput,
+        registerLink: registerLinkInput
+      }).then((response) => {
+        alert(response.data.msg);
+        toggleRefresh();
+      })
+    }
+
 
   return (
     
@@ -66,6 +85,7 @@ function EventsDashboardCard({imageUrl, description, title, id, toggleRefresh, r
                     type="button"
                     className="mt-4 ms-2 text-sm rounded-sm bg-yellow-800 px-3 py-1 text-[10px] font-bold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
                     value={id}
+                    onClick={handleUpdate}
                 >
                     Update
                 </button>
