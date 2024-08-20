@@ -17,7 +17,7 @@ function ExecomCard({ membersList }) {
             </p>
             <div className="mt-4 flex flex-wrap">
               <div className="w-auto p-1.5">
-                <a href={member.linkedInUrl}>
+                <a href={member.linkedInUrl} target="_blank">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full border border-gray-300 hover:border-gray-400">
                     <svg
                       width="16"
@@ -36,7 +36,7 @@ function ExecomCard({ membersList }) {
               </div>
               
               <div className="w-auto p-1.5">
-                <a href={member.InstagramUrl}>
+                <a href={member.InstagramUrl} target="_blank">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full border border-gray-300 hover:border-gray-400">
                     <svg
                       width="16"

@@ -73,22 +73,24 @@ function EventsDashboardCard({imageUrl, description, title, id, toggleRefresh, r
                 </p>
                 <input className='bg-black border mt-2 mb-2 p-2' value={registerLinkInput} onChange={handleRegisterLinkInput} />
                 
-                <button
-                    type="button"
-                    className="mt-4 text-sm rounded-sm bg-red-700 px-3 py-1 text-[10px] font-bold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-                    value={id}
-                    onClick={handleDelete}
-                >
-                    Delete
-                </button>
-                <button
-                    type="button"
-                    className="mt-4 ms-2 text-sm rounded-sm bg-yellow-800 px-3 py-1 text-[10px] font-bold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-                    value={id}
-                    onClick={handleUpdate}
-                >
-                    Update
-                </button>
+                <div>
+                  <button
+                      type="button"
+                      className="mt-4 text-sm rounded-sm bg-red-700 px-3 py-1 text-[10px] font-bold text-white shadow-sm hover:bg-red-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                      value={id}
+                      onClick={handleDelete}
+                  >
+                      Delete
+                  </button>
+                  <button
+                      type="button"
+                      className="mt-4 ms-2 text-sm rounded-sm bg-yellow-600 px-3 py-1 text-[10px] font-bold text-white shadow-sm hover:bg-yellow-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                      value={id}
+                      onClick={handleUpdate}
+                  >
+                      Update
+                  </button>
+                </div>
             </div>
         </div>
   )
