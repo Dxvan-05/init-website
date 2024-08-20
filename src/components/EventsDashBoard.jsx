@@ -165,7 +165,7 @@ function EventsDashBoard() {
                             <div>
                                 <button
                                     type="button"
-                                    className="inline-flex w-full items-center justify-center rounded-md bg-gray-600 px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-gray-500"
+                                    className="inline-flex w-full items-center justify-center rounded-md bg-green-600 px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-green-500"
                                     onClick={addNewEvent}
                                 >
                                     Add Event{" "}

@@ -22,7 +22,7 @@ function Footer() {
           <div className="w-full p-6 md:w-1/2 lg:w-2/12">
             <div className="h-full">
               <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-gray-500">
-                Lorem
+                Social Media
               </h3>
               <ul>
                 <li className="mb-4">
@@ -37,12 +37,12 @@ function Footer() {
                 </li>
                 <li className="mb-4">
                   <a className=" text-base font-medium text-gray-200 hover:text-gray-400" href="#">
-                    Lorem
+                    
                   </a>
                 </li>
                 <li>
                   <a className=" text-base font-medium text-gray-200 hover:text-gray-400" href="#">
-                    Lorem
+                    
                   </a>
                 </li>
               </ul>
@@ -51,27 +51,27 @@ function Footer() {
           <div className="w-full p-6 md:w-1/2 lg:w-2/12">
             <div className="h-full">
               <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-gray-500">
-                Lorem
+                Useful Links
               </h3>
               <ul>
                 <li className="mb-4">
-                  <a className=" text-base font-medium text-gray-200 hover:text-gray-400" href="#">
-                    Lorem
+                  <a className=" text-base font-medium text-gray-200 hover:text-gray-400" href="http://www.ajexam.com/">
+                    AJ Exam
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a className=" text-base font-medium text-gray-200 hover:text-gray-400" href="#">
-                  Lorem
+                  <a className=" text-base font-medium text-gray-200 hover:text-gray-400" href="https://www.aesajce.in/">
+                  AES
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a className=" text-base font-medium text-gray-200 hover:text-gray-400" href="#">
-                    Lorem
+                  <a className=" text-base font-medium text-gray-200 hover:text-gray-400" href="https://ieeeajce.org/">
+                    IEEE SB
                   </a>
                 </li>
                 <li>
                   <a className=" text-base font-medium text-gray-200 hover:text-gray-400" href="#">
-                  Lorem
+                  
                   </a>
                 </li>
               </ul>

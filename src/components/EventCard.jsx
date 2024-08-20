@@ -2,7 +2,7 @@ import React from 'react'
 
 function EventCard({title, description, imageUrl, registerLink}) {
     return (
-        <div className="w-[300px] rounded-md border border-gray-50">
+        <div className="w-[300px] rounded-md bg-gray-900 border border-gray-50">
             <img
                 src={imageUrl}
                 alt="Laptop"

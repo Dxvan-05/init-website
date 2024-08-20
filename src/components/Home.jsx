@@ -7,11 +7,12 @@ import Execom from "./Execom";
 import Events from "./Events";
 import Footer from "./Footer";
 import Gallery from "./Gallery";
+import Contact from './Contact';
 
 function Home() {
   return (
     <div id="container" className="relative">
-              <div id="pebbles" className="absolute w-full h-full">
+              <div id="pebbles" className="absolute w-full h-full overflow-hidden">
                   <div className="h-20 w-20 rounded-full bg-[#27c250] absolute top-20 left-1/2"></div>
                   <div className="h-20 w-20 rounded-full bg-[#27c250] absolute top-[800px] left-1/3"></div>
                   <div className="h-20 w-20 rounded-full bg-[#27c250] absolute  top-[500px] right-60"></div>
@@ -40,6 +41,7 @@ function Home() {
                   <Events />
                   <Gallery />
                   <Execom />
+                  <Contact />
                   <Footer />
               </div>
             </div>

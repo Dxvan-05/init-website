@@ -30,7 +30,7 @@
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-#about {
+#about, #contact {
     background: rgba(74, 74, 74, 0.25);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(4px);
@@ -41,4 +41,10 @@
 
 #about-title {
     font-family: "teko";
+}
+
+#login {
+    background: url('/hero-bg-login.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }

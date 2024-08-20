@@ -1,7 +1,8 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import test from '../assets/gallery/roadmap.webp'
 import gallery from "../assets/gallery";
+import axios from "axios";
 
 import "swiper/css";
 import "swiper/css/effect-creative";
@@ -9,9 +10,18 @@ import "swiper/css/effect-creative";
 import { EffectCreative } from "swiper/modules";
 
 function Gallery() {
+
+    const [galleryImages, setGalleryImages] = useState([]);
     
+    useEffect(() => {
+        axios.get('/gallery/data').then((response) => {
+            setGalleryImages(response.data.data)
+        })
+    }, [])
+
+
     return (
-        <div>
+        <div id="gallery">
             <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl lg:leading-tight text-center mt-32">
                 Gallery
             </h1>
@@ -36,7 +46,7 @@ function Gallery() {
                     modules={[EffectCreative]}
                     className="mySwiper"
                 >
-                    {gallery.map((image, index) => <SwiperSlide key={index}><img src={image} className="mx-auto w-[400px] sm:w-[600px] lg:w-[800px]" /></SwiperSlide>)}
+                    {galleryImages.map((image, index) => <SwiperSlide key={index}><img src={image.src} className="mx-auto w-[400px] sm:w-[600px] lg:w-[800px]" /></SwiperSlide>)}
                     
                 </Swiper>
             </div>

@@ -12,7 +12,7 @@ function Admin() {
   }
 
   return (
-    !isLoggedIn ? < LoginPage loginToggle={ loginToggle } /> : <Dashboard />
+    !isLoggedIn ? < LoginPage loginToggle={ loginToggle } /> : <Dashboard toggleLogin={loginToggle} />
   );
 }
 
