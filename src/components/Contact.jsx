@@ -6,8 +6,8 @@ function Contact() {
             <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl lg:leading-tight text-center mt-32">
                 Contact Us
             </h1>
-            <form action="#" id="contact" method="POST" className="mt-10 p-10 max-w-[700px]">
-                <div className="space-y-5 min-w-[500px]">
+            <form action="#" id="contact" method="POST" className="mt-10 p-10">
+                <div className="space-y-5 min-w-[70vw] md:min-w-[500px]">
                     <div>
                         <label
                             htmlFor="name"
@@ -18,7 +18,7 @@ function Contact() {
                         </label>
                         <div className="mt-2">
                             <input
-                                className="flex h-10 w-full min-w-[500px] rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                                className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                                 type="text"
                                 placeholder="Name"
                                 id="name"
@@ -35,7 +35,7 @@ function Contact() {
                         </label>
                         <div className="mt-2">
                             <input
-                                className="flex h-10 w-full min-w-[500px] rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                                className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                                 type="text"
                                 placeholder="+91 0000000000"
                                 id="phone"
@@ -52,7 +52,7 @@ function Contact() {
                         </label>
                         <div className="mt-2">
                             <input
-                                className="flex h-10 w-full min-w-[500px] rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                                className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                                 type="email"
                                 placeholder="initassociation@gmail.com"
                                 id="email"
@@ -69,7 +69,7 @@ function Contact() {
                         </label>
                         <div className="mt-2">
                             <textarea
-                                className="flex h-10 w-full min-h-[300px] min-w-[500px] rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                                className="flex h-10 w-full min-h-[300px] rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                                 type="text"
                                 placeholder="Enter your message here"
                                 id="message"
