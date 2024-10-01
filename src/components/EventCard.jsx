@@ -5,7 +5,7 @@ function EventCard({title, description, imageUrl, registerLink}) {
         <div className="w-[300px] rounded-md bg-gray-900 border border-gray-50">
             <img
                 src={imageUrl}
-                alt="Laptop"
+                alt="Event Image"
                 className="h-[200px] w-full rounded-md object-cover"
             />
             <div className="p-4 bg-gray-900 text-white">
